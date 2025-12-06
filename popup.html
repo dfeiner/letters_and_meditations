@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Stoic Quotes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Tab Navigation -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="daily">Daily Quote</button>
+      <button class="tab-button" data-tab="favorites">Favorites</button>
+    </div>
+
+    <!-- Daily Quote View -->
+    <div class="tab-content active" id="daily-tab">
+      <div class="quote-container">
+        <div class="quote-icon">📜</div>
+        <blockquote class="quote-text" id="daily-quote-text">
+          Loading your daily wisdom...
+        </blockquote>
+        <p class="quote-author" id="daily-quote-author"></p>
+        <button class="favorite-btn" id="favorite-btn" aria-label="Add to favorites">
+          <span class="heart-icon">♡</span>
+        </button>
+      </div>
+      <div class="quote-footer">
+        <p class="rotation-info" id="rotation-info">New quote at midnight</p>
+      </div>
+    </div>
+
+    <!-- Favorites View -->
+    <div class="tab-content" id="favorites-tab">
+      <div class="favorites-header">
+        <h2>Saved Quotes</h2>
+        <span class="favorites-count" id="favorites-count">0</span>
+      </div>
+      <div class="favorites-list" id="favorites-list">
+        <p class="empty-state">No favorites yet. Click the heart on your daily quote to save it!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="quotes.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

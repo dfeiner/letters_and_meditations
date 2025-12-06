@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#3498db" stroke="#2c3e50" stroke-width="4"/>
+
+  <!-- Scroll/document icon -->
+  <rect x="36" y="32" width="56" height="64" rx="4" fill="#fff" opacity="0.95"/>
+
+  <!-- Decorative lines representing text -->
+  <line x1="44" y1="44" x2="84" y2="44" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+  <line x1="44" y1="52" x2="84" y2="52" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+  <line x1="44" y1="60" x2="76" y2="60" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Quote symbol -->
+  <text x="64" y="82" font-family="Georgia, serif" font-size="24" fill="#3498db" text-anchor="middle" font-weight="bold">"</text>
+</svg>

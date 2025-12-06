@@ -1,0 +1,314 @@
+/**
+ * Daily Stoic Quotes - Popup Styles
+ * Design philosophy: Calm, minimal, focused
+ */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  width: 400px;
+  min-height: 300px;
+}
+
+.container {
+  padding: 0;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  color: #7f8c8d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  color: #34495e;
+  background: #f8f9fa;
+}
+
+.tab-button.active {
+  color: #2c3e50;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3498db;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Daily Quote View */
+.quote-container {
+  padding: 32px 24px;
+  text-align: center;
+  background: #fff;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.quote-text {
+  font-size: 18px;
+  font-style: italic;
+  color: #2c3e50;
+  margin: 0 0 16px 0;
+  line-height: 1.7;
+  font-weight: 400;
+  quotes: """ """ "'" "'";
+}
+
+.quote-text::before {
+  content: open-quote;
+  font-size: 1.5em;
+  color: #3498db;
+  opacity: 0.4;
+}
+
+.quote-text::after {
+  content: close-quote;
+  font-size: 1.5em;
+  color: #3498db;
+  opacity: 0.4;
+}
+
+.quote-author {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.quote-author::before {
+  content: '— ';
+}
+
+/* Favorite Button */
+.favorite-btn {
+  background: transparent;
+  border: 2px solid #e1e8ed;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-btn:hover {
+  border-color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.heart-icon {
+  font-size: 20px;
+  color: #bdc3c7;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover .heart-icon {
+  color: #e74c3c;
+}
+
+.favorite-btn.favorited .heart-icon {
+  color: #e74c3c;
+}
+
+.favorite-btn.favorited .heart-icon::before {
+  content: '♥';
+}
+
+/* Quote Footer */
+.quote-footer {
+  padding: 12px 24px;
+  background: #f8f9fa;
+  border-top: 1px solid #e1e8ed;
+}
+
+.rotation-info {
+  font-size: 12px;
+  color: #95a5a6;
+  text-align: center;
+  margin: 0;
+}
+
+/* Favorites View */
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.favorites-header h2 {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.favorites-count {
+  background: #3498db;
+  color: white;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.favorites-list {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #95a5a6;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Favorite Item Card */
+.favorite-item {
+  padding: 20px 24px;
+  border-bottom: 1px solid #ecf0f1;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.favorite-item:hover {
+  background: #f8f9fa;
+}
+
+.favorite-item:last-child {
+  border-bottom: none;
+}
+
+.favorite-quote-text {
+  font-size: 15px;
+  color: #2c3e50;
+  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  padding-right: 32px;
+}
+
+.favorite-quote-author {
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.favorite-quote-author::before {
+  content: '— ';
+}
+
+.unfavorite-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #e74c3c;
+  opacity: 0;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.favorite-item:hover .unfavorite-btn {
+  opacity: 1;
+}
+
+.unfavorite-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Scrollbar Styling */
+.favorites-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.favorites-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.favorites-list::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 3px;
+}
+
+.favorites-list::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
